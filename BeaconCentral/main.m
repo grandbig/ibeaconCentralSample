@@ -2,7 +2,7 @@
 //  main.m
 //  BeaconCentral
 //
-//  Created by 加藤 雄大 on 2014/04/12.
+//  Created by Takahiro on 2014/04/12.
 //  Copyright (c) 2014年 grandbig.github.io. All rights reserved.
 //
 

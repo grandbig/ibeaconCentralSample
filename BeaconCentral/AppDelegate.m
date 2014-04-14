@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  BeaconCentral
 //
-//  Created by 加藤 雄大 on 2014/04/12.
+//  Created by Takahiro on 2014/04/12.
 //  Copyright (c) 2014年 grandbig.github.io. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -15,7 +16,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    ViewController *vc = [[ViewController alloc] init];
+    vc = (ViewController *)[[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = vc;
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -34,6 +41,11 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    NSInteger badgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber];
+    if(badgeNumber > 0) {
+        application.applicationIconBadgeNumber = 0;
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
