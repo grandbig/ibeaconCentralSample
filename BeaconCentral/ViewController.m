@@ -114,7 +114,7 @@
         
         self.str = [[NSString alloc] initWithFormat:@"%f [m]", self.nearestBeacon.accuracy];
         NSLog(@"%@", self.str);
-        [self sendLocalNotificationForMessage:self.str];
+        [self sendLocalNotificationForMessage:rangeMessage];
     }
 }
 
